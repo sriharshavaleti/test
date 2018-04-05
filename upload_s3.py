@@ -5,7 +5,7 @@ import sys
 import os
 
 path = sys.argv[1]
-s3 = boto.resource('s3')
+s3 = boto.resource('s3') # This is using IAM role other wise you need to pass Access key and secret access key
 filename = os.path.basename(path)
 with open(path,'rb') as file_content:
     content_type = mimetype.guess_type(path)
